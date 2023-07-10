@@ -13,8 +13,8 @@ RUN apt-get update \
     ## python-env && pip3 support
     python3.10-venv \
     python3-pip
-  RUN R -e "BiocManager::install(c('xcms','IPO','sva','WGCNA', 'KEGGREST', 'KEGGgraph', 'SSPA','Rdisop', 'qvalue', 'GlobalAncova', 'globaltest', 'siggenes', 'Rgraphviz','ChemmineR','metaMS', 'msPurity', 'mixOmics', 'fgsea', 'Rita','lumi','CompoundDb','MetaboAnnotation','MsBackendMgf','MsBackendMsp','genefilter','metapone','GSVA','limma','TCGAbiolinks','SummarizedExperiment'))" \
-  && install2.r --error \
+RUN R -e "BiocManager::install(c('xcms','IPO','sva','WGCNA', 'KEGGREST', 'KEGGgraph', 'SSPA','Rdisop', 'qvalue', 'GlobalAncova', 'globaltest', 'siggenes', 'Rgraphviz','ChemmineR','metaMS', 'msPurity', 'mixOmics', 'fgsea', 'Rita','lumi','CompoundDb','MetaboAnnotation','MsBackendMgf','MsBackendMsp','genefilter','metapone','GSVA','limma','TCGAbiolinks','SummarizedExperiment'))" 
+RUN install2.r --error \
     RAMClustR \
     ChemoSpec \
     webchem \
@@ -38,18 +38,19 @@ RUN apt-get update \
     mlr3verse \
     ooplah \
     dictionar6 \
-    reticulate \
-  && R -e "install.packages(c("mlr3proba","mlr3extralearners"), repos = "https://mlr-org.r-universe.dev")" \
-  && installGithub.r \
+    reticulate
+RUN R -e "install.packages(c("mlr3proba","mlr3extralearners"), repos = "https://mlr-org.r-universe.dev")" 
+RUN installGithub.r \
     rstudio/tfhub \
     rstudio/tfdatasets \
     yufree/enviGCMS \
     yufree/pmd \
     yufree/mzrtsim \
-    yufree/rmwf \
-  && rm -rf /tmp/downloaded_packages \
-  && strip /usr/local/lib/R/site-library/*/libs/*.so \
-  && python3 -m pip install --no-cache-dir --upgrade pip && \
+    yufree/rmwf 
+RUN rm -rf /tmp/downloaded_packages 
+RUN strip /usr/local/lib/R/site-library/*/libs/*.so 
+WORKDIR /usr/src/app
+RUN python3 -m pip install --no-cache-dir --upgrade pip && \
     python3 -m pip install --no-cache-dir \ 
     tensorflow==2.11.* \
     tensorflow-hub \
@@ -71,16 +72,7 @@ RUN apt-get update \
     lifelines \
     matplotlib \
     captum \
-    scipy \
-  && python3 -m pip install --no-cache-dir \
-  torch \ 
-  torchvision \ 
-  torchaudio \
-  --index-url https://download.pytorch.org/whl/cpu \
-  && python3 -m pip install --no-cache-dir \
-  pyg_lib \
-  torch_scatter \
-  torch_sparse \
-  torch_cluster \
-  torch_spline_conv \ 
-  -f https://data.pyg.org/whl/torch-2.0.0+cpu.html 
+    scipy 
+RUN python3 -m pip install --no-cache-dir torch  torchvision torchaudio  --index-url https://download.pytorch.org/whl/cpu 
+RUN python3 -m pip install --no-cache-dir pyg_lib torch_scatter torch_sparse torch_cluster  torch_spline_conv  -f https://data.pyg.org/whl/torch-2.0.0+cpu.html 
+COPY . .
