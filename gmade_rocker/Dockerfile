@@ -39,15 +39,15 @@ RUN install2.r --error \
     ooplah \
     dictionar6 \
     reticulate
-RUN R -e "install.packages("mlr3proba", repos = "https://mlr-org.r-universe.dev")" 
-RUN R -e "install.packages("mlr3extralearners",repos = "https://mlr-org.r-universe.dev")"
 RUN installGithub.r \
     rstudio/tfhub \
     rstudio/tfdatasets \
     yufree/enviGCMS \
     yufree/pmd \
     yufree/mzrtsim \
-    yufree/rmwf 
+    yufree/rmwf \
+    mlr-org/mlr3proba \
+    mlr-org/mlr3extralearners@*release 
 RUN rm -rf /tmp/downloaded_packages 
 RUN strip /usr/local/lib/R/site-library/*/libs/*.so 
 WORKDIR /usr/src/app
