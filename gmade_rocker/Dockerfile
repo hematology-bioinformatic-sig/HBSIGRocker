@@ -13,7 +13,6 @@ RUN apt-get update \
     ## python-env && pip3 support
     python3.10-venv \
     python3-pip
-
   && R -e "BiocManager::install(c('xcms','IPO','sva','WGCNA', 'KEGGREST', 'KEGGgraph', 'SSPA','Rdisop', 'qvalue', 'GlobalAncova', 'globaltest', 'siggenes', 'Rgraphviz','ChemmineR','metaMS', 'msPurity', 'mixOmics', 'fgsea', 'Rita','lumi','CompoundDb','MetaboAnnotation','MsBackendMgf','MsBackendMsp','genefilter','metapone','GSVA','limma','TCGAbiolinks','SummarizedExperiment'))" \
   && install2.r --error \
     RAMClustR \
