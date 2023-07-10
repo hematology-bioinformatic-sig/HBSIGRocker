@@ -72,5 +72,15 @@ RUN apt-get update \
     matplotlib \
     captum \
     scipy \
-  && python3 -m pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu \
-  && python3 -m pip install --no-cache-dir pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.0.0+cpu.html 
+  && python3 -m pip install --no-cache-dir \
+  torch \ 
+  torchvision \ 
+  torchaudio \
+  --index-url https://download.pytorch.org/whl/cpu \
+  && python3 -m pip install --no-cache-dir \
+  pyg_lib \
+  torch_scatter \
+  torch_sparse \
+  torch_cluster \
+  torch_spline_conv \ 
+  -f https://data.pyg.org/whl/torch-2.0.0+cpu.html 
