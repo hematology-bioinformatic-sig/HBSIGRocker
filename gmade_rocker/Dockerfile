@@ -39,7 +39,8 @@ RUN install2.r --error \
     ooplah \
     dictionar6 \
     reticulate
-RUN R -e "install.packages(c("mlr3proba","mlr3extralearners"), repos = "https://mlr-org.r-universe.dev")" 
+RUN R -e "install.packages("mlr3proba", repos = "https://mlr-org.r-universe.dev")" 
+RUN R -e "install.packages("mlr3extralearners",repos = "https://mlr-org.r-universe.dev")"
 RUN installGithub.r \
     rstudio/tfhub \
     rstudio/tfdatasets \
