@@ -1,5 +1,7 @@
 # xcmsrocker: Rocker image for metabolomics data analysis
 
+[![Security Status](https://www.murphysec.com/platform3/v31/badge/1678291332689059840.svg)](https://www.murphysec.com/console/report/1678291332600979456/1678291332689059840) 
+
 Software and data is required for reproducible research. However, detailed workflows connecting software and data would be the key to reproducible research in metabolomics studies. Xcmsrocker is a linux based [rocker](https://www.rocker-project.org/)/docker image to host the workflow of [R based metabolomics software]((https://yufree.cn/en/2018/01/17/use-docker-to-package-your-metabolomics-study/)). It includes multiple mainstream R packages used in metabolomics study with RStduio as IDE. Such image could be deployed on single machine or [cluster(HPC or cloud computing)](https://yufree.cn/en/2022/05/26/using-xcmsrocker-on-hpc-via-singularity/). 
 
 Besides, `rmwf` package is attached in this image to provide detailed workflow template( File - New File - R Markdown - From Template - Select template with {rmwf}) and facilitate the users to perform metabolomics data analysis and/or comparisons. Specifically, paired mass distances dependent analysis (PMDDA) and reactomics analysis templates could be found here.
