@@ -1,6 +1,5 @@
 FROM rocker/verse:latest
 MAINTAINER "Yanhua Zheng" zyh3084989256@gmail.com
-
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     libnetcdf-dev \
