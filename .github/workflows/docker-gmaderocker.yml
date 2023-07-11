@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: HBSIGRocker
+  IMAGE_NAME: hbsigrocker
 
 jobs:
   docker:
@@ -35,7 +35,7 @@ jobs:
         with:
           context: ./gmade_methyarray
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/HBSIGRocker:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/hbsigrocker:latest
     
       
       
