@@ -1,4 +1,4 @@
-name: Docker gmadesomicsrocker
+name: Docker HBSIGRocker
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: gmadeomicsrocker
+  IMAGE_NAME: HBSIGRocker
 
 jobs:
   docker:
@@ -33,9 +33,9 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./gmade_rocker
+          context: ./gmade_methyarray
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/gmadeomicsrocker:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/HBSIGRocker:latest
     
       
       
