@@ -13,15 +13,9 @@ RUN apt-get update \
     python3.10-venv \
     python3-pip
 RUN R -e "BiocManager::install(c( 'KEGGREST', 'KEGGgraph', 'Rgraphviz','ChemmineR','metaMS', 'msPurity', 'mixOmics', 'fgsea', 'Rita','lumi','genefilter','metapone','GSVA','limma','TCGAbiolinks','SummarizedExperiment','methylationArrayAnalysis','rnaseqGene','simpleSingleCell','arrays','chipseqDB'))" 
-RUN install2.r --error \
-    ROCS \
-    plotly \
-    pROC \
-    isva \ 
+RUN install2.r --error \ 
     fs \
     pins \
-    table1 \
-    flextable \
     mlr3verse \
     ooplah \
     dictionar6 \
