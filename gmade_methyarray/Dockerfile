@@ -16,8 +16,6 @@ RUN R -e "BiocManager::install(c( 'KEGGREST', 'KEGGgraph', 'Rgraphviz','Chemmine
 RUN install2.r --error \
     ROCS \
     plotly \
-    caret \ 
-    caretEnsemble \
     pROC \
     isva \ 
     fs \
