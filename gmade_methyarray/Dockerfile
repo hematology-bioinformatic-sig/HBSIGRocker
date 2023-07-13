@@ -14,12 +14,27 @@ RUN apt-get update \
     python3-pip
 RUN R -e "BiocManager::install(c( 'KEGGREST', 'KEGGgraph', 'Rgraphviz','ChemmineR','metaMS', 'msPurity', 'mixOmics', 'fgsea', 'Rita','lumi','genefilter','metapone','GSVA','limma','TCGAbiolinks','SummarizedExperiment','methylationArrayAnalysis','rnaseqGene','simpleSingleCell','arrays','chipseqDB'))" 
 RUN install2.r --error \ 
+    plotly \
+    pROC \
+    isva \ 
     fs \
     pins \
     mlr3verse \
     ooplah \
     dictionar6 \
-    reticulate
+    reticulate \
+    quarto \
+    partykit \
+    coin \
+    readxl \
+    ISLR \
+    MASS \
+    mlr3viz \
+    precrec \
+    reshape2 \
+    ggpubr \
+    data.table \
+    knitr
 RUN installGithub.r \
     mlr-org/mlr3proba \
     mlr-org/mlr3extralearners@*release 
