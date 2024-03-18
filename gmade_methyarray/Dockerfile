@@ -16,7 +16,7 @@ RUN apt-get update \
     R -e "pak::pkg_install(c('tidyverse','blogdown','bookdown','tinytex','xcms','WGCNA', 'KEGGREST', 'KEGGgraph', 'plotly','pROC','sva','limma','fs','keras','tensorflow','pins','flextable','torch','mlr3verse','R6','reticulate', 'GSVA','graphite','clusterProfiler','igraph','ggraph','TCGAbiolinks','SummarizedExperiment', 'ggpubr','data.table'),upgrade = TRUE,ask= FALSE, dependencies = NA)"  &&\
     R -e "pak::pkg_install(c('rstudio/tfhub','rstudio/tfdatasets','yufree/enviGCMS','yufree/pmd','yufree/mzrtsim','yufree/rmwf','mlr-org/mlr3extralearners@*release','hrbrmstr/hrbrthemes','immunogenomics/harmony'),upgrade = TRUE,ask= FALSE, dependencies = NA)" &&\
     R -e "install.packages('mlr3proba', repos = 'https://mlr-org.r-universe.dev')" &&\
-    R -e "tinytex::install_tinytex()" &&\
+    R -e "tinytex::install_tinytex(force = TRUE)" &&\
     R -e "tinytex::tlmgr_repo('http://mirrors.tuna.tsinghua.edu.cn/CTAN/')" &&\
     rm -rf /tmp/downloaded_packages && \
     R -e "pak::cache_clean()" &&\
